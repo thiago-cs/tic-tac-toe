@@ -1,0 +1,13 @@
+.Board {
+	margin: auto;
+	width: 70vmin;
+	height: 70vmin;
+	display: inline-grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 5%;
+}
+/* 
+	gaps: 5% => total: 2 * 5% = 10% => remaining: 90%
+	each row/column: 90% / 3 = 30%   (...of width and height respectively)
+ */

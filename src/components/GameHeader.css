@@ -1,0 +1,51 @@
+.game-header {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	justify-content: center;
+	color: #DDD;
+	z-index: 99;
+}
+
+.game-header > .players {
+	font-size: 6vmin;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(2, auto) 1fr;
+	column-gap: 1em;
+	row-gap: 0.5em;
+	align-items: center;
+}
+
+.game-header > .players > img.bullet {
+	width: 3vmin;
+	grid-column-start: 1;
+}
+
+.game-header > .players > .name {
+	grid-column-start: 2;
+}
+
+.game-header > .players > .score {
+	color: white;
+}
+
+.game-header > .play-again {
+	font-size: 5vmin;
+	margin-left: 1.5em;
+	display: grid;
+	grid-template-rows: repeat(2, auto);
+	justify-items: center;
+}
+
+.game-header > .play-again > button {
+	margin-top: 0.4em;
+	padding: 0.3em;
+	width: 2em;
+	height: 2em;
+	border-width: 0;
+}
+
+.game-header > .play-again > button > img {
+	width: 1.5em;
+	height: 1.5em;
+}
