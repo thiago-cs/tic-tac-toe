@@ -16,7 +16,7 @@ body, body * {
 #root {
 	height: 100%;
 /**/
-	background: url(https://picsum.photos/200/300/?blur=5);
+	background: url(https://picsum.photos/300/300/?blur=5);
 	background-size: cover;
 	background-repeat: no-repeat;
 /**/
