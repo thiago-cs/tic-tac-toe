@@ -36,7 +36,7 @@ export default function (props)
 			</div>
 			<div className="play-again" style={ status === "running" ? hidden : undefined } >
 				<span>play again</span>
-				<span class="icon-again" onClick={onPlayAgain} />
+				<span className="icon-again" onClick={onPlayAgain} />
 			</div>
 		</div>
 	);
