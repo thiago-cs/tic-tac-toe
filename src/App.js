@@ -1,5 +1,5 @@
 import { Component } from "react";
-import TicTacToe from "./model/TicTacToe.js";
+import TicTacToeGame from "./model/TicTacToeGame.js";
 import Game from './containers/Game.js';
 import Confetti from "./components/Confetti.js";
 import './App.css';
@@ -11,7 +11,7 @@ export default class App extends Component
 		super(props);
 
 		//
-		this._game = new TicTacToe();
+		this._game = new TicTacToeGame();
 		this._game.players[0].color = "YellowGreen";
 		this._game.players[1].color = "SlateBlue";
 

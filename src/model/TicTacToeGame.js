@@ -1,6 +1,6 @@
 import Player from "./Player.js";
 
-export default class TicTacToe
+export default class TicTacToeGame
 {
 	constructor()
 	{
