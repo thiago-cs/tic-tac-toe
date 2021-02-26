@@ -1,9 +1,7 @@
 import './GameHeader.css';
-import refresh from '../media/again.svg';
-import bullet from '../media/bullet.svg';
 
 
-const hidden = { opacity: "0" };
+const hidden = { display: "none" };
 
 export default function (props)
 {
@@ -23,7 +21,6 @@ export default function (props)
 	const bulletIndicator = 
 		<img key="bullet"
 			className="bullet" 
-			src={bullet} 
 			alt="current player" 
 			style={{ gridRowStart: current + 1 }} />;
 
@@ -39,9 +36,7 @@ export default function (props)
 			</div>
 			<div className="play-again" style={ status === "running" ? hidden : undefined } >
 				<span>play again</span>
-				<button onClick={onPlayAgain}>
-					<img src={refresh} alt="restart icon" />
-				</button>
+				<span class="icon-again" onClick={onPlayAgain} />
 			</div>
 		</div>
 	);

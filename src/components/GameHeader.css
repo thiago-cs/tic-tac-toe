@@ -1,28 +1,34 @@
 .game-header {
 	display: grid;
-	grid-template-columns: repeat(2, auto);
+	grid-template-columns: auto 10em;
+	column-gap: 8vmin;
 	justify-content: center;
 	color: #DDD;
 	z-index: 99;
 }
 
 .game-header > .players {
-	font-size: 6vmin;
+	font-size: 5vmin;
 	display: grid;
 	grid-template-columns: repeat(3, auto);
 	grid-template-rows: repeat(2, auto) 1fr;
-	column-gap: 1em;
 	row-gap: 0.5em;
 	align-items: center;
 }
 
 .game-header > .players > img.bullet {
-	width: 3vmin;
+	width: 0.5em;
+	height: 0.5em;
+	margin-right: 0.25em;
 	grid-column-start: 1;
+	background: lightgray;
+	mask: url(../media/bullet.svg) no-repeat;
+	mask-size: contain;
 }
 
 .game-header > .players > .name {
 	grid-column-start: 2;
+	margin-right: 0.75em;
 }
 
 .game-header > .players > .score {
@@ -30,22 +36,25 @@
 }
 
 .game-header > .play-again {
-	font-size: 5vmin;
-	margin-left: 1.5em;
+	font-size: 4vmin;
 	display: grid;
 	grid-template-rows: repeat(2, auto);
 	justify-items: center;
 }
 
-.game-header > .play-again > button {
-	margin-top: 0.4em;
-	padding: 0.3em;
-	width: 2em;
-	height: 2em;
-	border-width: 0;
+.icon-again {
+	background: lightgray;
+	width: 1.5em;
+	height: 1.5em;
+	mask: url(../media/again.svg);
+	mask-size: contain;
 }
 
-.game-header > .play-again > button > img {
+.icon-again:hover {
+  background: white;
+}
+
+.game-header > .play-again img {
 	width: 1.5em;
 	height: 1.5em;
 }
