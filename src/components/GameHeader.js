@@ -1,3 +1,4 @@
+import React from "react";
 import './GameHeader.css';
 
 
@@ -6,6 +7,7 @@ const hidden = { display: "none" };
 export default function (props)
 {
 	const { players, current, status, onPlayAgain } = props;
+	const playAgainRef = React.createRef();
 
 	//
 	const children = [];
@@ -36,8 +38,11 @@ export default function (props)
 			</div>
 			<div className="play-again" style={ status === "running" ? hidden : undefined } >
 				<span>play again</span>
-				<span className="icon-again" onClick={onPlayAgain} />
+				<span ref={playAgainRef} className="icon-again animate fast" onClick={onPlayAgain} onMouseDown={f} onMouseUp={g} />
 			</div>
 		</div>
 	);
+	
+	function f() { playAgainRef.current.classList.remove("rotateOut"); playAgainRef.current.classList.add("rotateIn"); }
+	function g() { playAgainRef.current.classList.remove("rotateIn"); playAgainRef.current.classList.add("rotateOut"); }
 }

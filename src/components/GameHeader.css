@@ -57,4 +57,53 @@
 .game-header > .play-again img {
 	width: 1.5em;
 	height: 1.5em;
+	transform-origin: center center;
+}
+
+
+.animate
+{
+	animation-fill-mode: both;
+	animation-timing-function: ease-in;
+}
+
+.animate.fast
+{
+	animation-duration: 0.150s;
+}
+
+/* @keyframes fadeIn
+{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+@keyframes fadeOut
+{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+.fadeOut {
+    animation-name: fadeOut;
+} */
+
+.rotateIn {
+    animation-name: rotateIn;
+}
+.rotateOut {
+    animation-name: rotateOut;
+}
+@keyframes rotateIn
+{
+      0% { transform: rotate(0); }
+    100% { transform: rotate(-240deg); }
+}
+@keyframes rotateOut
+{
+      /* 0% { transform: rotate(-240deg); } */
+      0% { transform: rotate(-360deg); }
+    100% { transform: rotate(-360deg); }
 }
