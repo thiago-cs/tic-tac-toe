@@ -15,6 +15,8 @@ export default class App extends Component
 		this._game.players[0].color = "YellowGreen";
 		this._game.players[1].color = "SlateBlue";
 
+		this._confettiController = { };
+
 		this.state = this.gameState;
 
 		// Binding our callbacks...
@@ -22,50 +24,55 @@ export default class App extends Component
 		this.reset = this.reset.bind(this);
 	}
 
-	get gameState()
-	{
-		return { squares: this._game.squares, gameState: this._game.status };
-	}
-
 	reset()
 	{
+		this.stopConfetti();
 		this._game.reset();
-		this.setState(this.gameState);
+		this.setState({});
+	}
+
+	startConfetti()
+	{
+		this._confettiController.current.start();
+	}
+
+	stopConfetti()
+	{
+		this._confettiController.current.stop();
 	}
 
 	handleClick(index)
 	{
-		// 2. Computes this app's new state.
+		// 1. Computes this app's new state.
+		const prevStatus = this._game.status;
 		try
 		{
 			this._game.playerMove(index);
 		}
 		catch (error)
 		{
-			console.error(error.message);
+			console.log(error.message);
 			return;
 		}
 
+		// 2. Compares statuses.
+		if (prevStatus !== this._game.status)
+			if (this._game.status === "win")
+				this.startConfetti();
+			else
+				this.stopConfetti();
+
 		// 3.
-		this.setState({ squares: this._game.squares, gameState: this._game.status });
+		this.setState({});
 	}
 
 	render()
 	{
-		// Coming soon
-		const confettiStyle = {};
-		
-		if (this._game.status !== "win")
-		{
-			confettiStyle.display = "none";
-			//setTimeout(ShowConfetti, 0);
-		}
-
 		return (
 
-		<div className="App">
+		<div className="App" >
 			<Game game={this._game} onClick={this.handleClick} onPlayAgain={this.reset} />
-			{/* <Confetti style={confettiStyle} /> */}
+			<Confetti controller={this._confettiController} count={250} />
 		</div>
 
 		);
