@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.bf0d6ae4.chunk.css",
-    "main.js": "./static/js/main.f3785895.chunk.js",
-    "main.js.map": "./static/js/main.f3785895.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.f94019bd.js",
-    "runtime-main.js.map": "./static/js/runtime-main.f94019bd.js.map",
-    "static/js/2.056aaab2.chunk.js": "./static/js/2.056aaab2.chunk.js",
-    "static/js/2.056aaab2.chunk.js.map": "./static/js/2.056aaab2.chunk.js.map",
-    "static/js/3.6ff384fa.chunk.js": "./static/js/3.6ff384fa.chunk.js",
-    "static/js/3.6ff384fa.chunk.js.map": "./static/js/3.6ff384fa.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/main.bf0d6ae4.chunk.css.map": "./static/css/main.bf0d6ae4.chunk.css.map",
-    "static/js/2.056aaab2.chunk.js.LICENSE.txt": "./static/js/2.056aaab2.chunk.js.LICENSE.txt",
-    "static/media/again.d7e79657.svg": "./static/media/again.d7e79657.svg",
-    "static/media/bullet.f75cfcbf.svg": "./static/media/bullet.f75cfcbf.svg"
+    "main.css": "/tic-tac-toe/static/css/main.d73c2bd8.chunk.css",
+    "main.js": "/tic-tac-toe/static/js/main.e9ce02e5.chunk.js",
+    "main.js.map": "/tic-tac-toe/static/js/main.e9ce02e5.chunk.js.map",
+    "runtime-main.js": "/tic-tac-toe/static/js/runtime-main.eb94eeec.js",
+    "runtime-main.js.map": "/tic-tac-toe/static/js/runtime-main.eb94eeec.js.map",
+    "static/js/2.2029c6a8.chunk.js": "/tic-tac-toe/static/js/2.2029c6a8.chunk.js",
+    "static/js/2.2029c6a8.chunk.js.map": "/tic-tac-toe/static/js/2.2029c6a8.chunk.js.map",
+    "static/js/3.6ff384fa.chunk.js": "/tic-tac-toe/static/js/3.6ff384fa.chunk.js",
+    "static/js/3.6ff384fa.chunk.js.map": "/tic-tac-toe/static/js/3.6ff384fa.chunk.js.map",
+    "index.html": "/tic-tac-toe/index.html",
+    "static/css/main.d73c2bd8.chunk.css.map": "/tic-tac-toe/static/css/main.d73c2bd8.chunk.css.map",
+    "static/js/2.2029c6a8.chunk.js.LICENSE.txt": "/tic-tac-toe/static/js/2.2029c6a8.chunk.js.LICENSE.txt",
+    "static/media/GameHeader.css": "/tic-tac-toe/static/media/bullet.f75cfcbf.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f94019bd.js",
-    "static/js/2.056aaab2.chunk.js",
-    "static/css/main.bf0d6ae4.chunk.css",
-    "static/js/main.f3785895.chunk.js"
+    "static/js/runtime-main.eb94eeec.js",
+    "static/js/2.2029c6a8.chunk.js",
+    "static/css/main.d73c2bd8.chunk.css",
+    "static/js/main.e9ce02e5.chunk.js"
   ]
 }
