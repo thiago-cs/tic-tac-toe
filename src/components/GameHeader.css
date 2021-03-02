@@ -1,4 +1,4 @@
-.game-header {
+.GameHeader {
 	display: grid;
 	grid-template-columns: auto 10em;
 	column-gap: 8vmin;
@@ -7,7 +7,7 @@
 	z-index: 99;
 }
 
-.game-header > .players {
+.GameHeader > .players {
 	font-size: 5vmin;
 	display: grid;
 	grid-template-columns: repeat(3, auto);
@@ -16,7 +16,7 @@
 	align-items: center;
 }
 
-.game-header > .players > img.bullet {
+.GameHeader > .players > img.bullet {
 	width: 0.5em;
 	height: 0.5em;
 	margin-right: 0.25em;
@@ -26,16 +26,16 @@
 	mask-size: contain;
 }
 
-.game-header > .players > .name {
+.GameHeader > .players > .name {
 	grid-column-start: 2;
 	margin-right: 0.75em;
 }
 
-.game-header > .players > .score {
+.GameHeader > .players > .score {
 	color: white;
 }
 
-.game-header > .play-again {
+.GameHeader > .play-again {
 	font-size: 4vmin;
 	display: grid;
 	grid-template-rows: repeat(2, auto);
@@ -54,7 +54,7 @@
   background: white;
 }
 
-.game-header > .play-again img {
+.GameHeader > .play-again img {
 	width: 1.5em;
 	height: 1.5em;
 	transform-origin: center center;

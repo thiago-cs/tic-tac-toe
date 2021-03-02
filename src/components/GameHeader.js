@@ -32,7 +32,7 @@ export default function (props)
 
 	return (
 	
-		<div className="game-header" >
+		<div className="GameHeader" >
 			<div className="players" >
 				{children}
 			</div>
