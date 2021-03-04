@@ -2,7 +2,7 @@ import React from "react";
 import './GameHeader.css';
 
 
-const hidden = { display: "none" };
+const hidden = { visibility: "hidden" };
 
 export default function (props)
 {
@@ -16,16 +16,12 @@ export default function (props)
 	{
 		const p = players[i];
 		const key = children.length;
-		children.push(<span key={key}     className="name"  style={{ color: p.color }}>{p.name}</span>);
-		children.push(<span key={key + 1} className="score" >{p.score}</span>);
+		const row = `${2 * i + 1} / span 2`;
+		children.push(<span key={key}     className="name"  style={{ gridRow: row, color: p.color }}>{p.name}</span>);
+		children.push(<span key={key + 1} className="score" style={{ gridRow: row }} >{p.score}</span>);
 	}
 
-	const bulletIndicator = 
-		<img key="bullet"
-			className="bullet" 
-			alt="current player" 
-			style={{ gridRowStart: current + 1 }} />;
-
+	const bulletIndicator = <img key="bullet" className="bullet" alt="current player" />;
 	children.push(bulletIndicator);
 
 	//
@@ -33,7 +29,7 @@ export default function (props)
 	return (
 	
 		<div className="GameHeader" >
-			<div className="players" >
+			<div className={`players animate fast row${current + 1}`} >
 				{children}
 			</div>
 			<div className="play-again" style={ status === "running" ? hidden : undefined } >
