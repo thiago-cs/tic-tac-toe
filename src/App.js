@@ -1,7 +1,8 @@
-import { Component } from "react";
-import TicTacToeGame from "./model/TicTacToeGame.js";
+import { Component } from 'react';
+import TicTacToeGame from './model/TicTacToeGame.js';
 import Game from './containers/Game.js';
-import Confetti from "./components/Confetti.js";
+import Confetti from './components/Confetti.js';
+import Overlay from './containers/Overlay.js';
 import './App.css';
 
 export default class App extends Component
@@ -17,7 +18,7 @@ export default class App extends Component
 
 		this._confettiController = { };
 
-		this.state = this.gameState;
+		this._isOverlayVisible = true;
 
 		// Binding our callbacks...
 		this.handleClick = this.handleClick.bind(this);
@@ -27,6 +28,7 @@ export default class App extends Component
 	reset()
 	{
 		this.stopConfetti();
+		this._isOverlayVisible = false;
 		this._game.reset();
 		this.setState({});
 	}
@@ -71,8 +73,9 @@ export default class App extends Component
 		return (
 
 		<div className="App" >
-			<Game game={this._game} onClick={this.handleClick} onPlayAgain={this.reset} />
+			<Game game={this._game} onClick={this.handleClick} />
 			<Confetti controller={this._confettiController} count={250} />
+			<Overlay game={this._game} onPlayAgain={this.reset} />
 		</div>
 
 		);

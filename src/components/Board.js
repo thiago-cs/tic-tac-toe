@@ -1,4 +1,4 @@
-import Square from "./Square.js";
+import Square from './Square.js';
 import './Board.css';
 
 export default function (props)

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./Confetti.css";
+import React, { Component } from 'react';
+import './Confetti.css';
 
 export default class ConfettiComponent extends Component
 {

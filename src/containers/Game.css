@@ -1,2 +1,37 @@
-/* .Game {
-} */
+.Game {
+	padding: 5vmin;
+	padding: 5vmin;
+	display: grid;
+	gap: 5vmin;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 140vh)
+{
+	.Game {
+		--size: calc(min(100vw, 80vh) - 10vmin);
+		grid-template-columns: var(--size);
+		grid-template-rows: auto var(--size);
+		align-content: start;
+	}
+
+	.GameHeader {
+		grid-template-columns: 1fr auto;
+	}
+}
+@media (min-width: 140vh)
+{
+	.Game {
+		--size: min(100vw - 40vh, 90vh);
+		grid-template-columns: auto var(--size);
+		grid-template-rows: var(--size);
+		align-content: center;
+	}
+
+	.GameHeader {
+		height: 100%;
+		grid-template-rows: 1fr auto;
+		justify-items: center;
+	}
+}

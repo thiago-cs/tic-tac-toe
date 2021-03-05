@@ -3,7 +3,6 @@
 	gap: 8vmin;
 	align-items: start;
 	color: #DDD;
-	z-index: 99;
 }
 
 .GameHeader > .players {
@@ -35,45 +34,14 @@
 	color: white;
 }
 
-.GameHeader > .play-again {
-	max-width: 20vmin;
-	font-size: 4vmin;
-	display: grid;
-	grid-template-rows: repeat(2, auto);
-	gap: 2vmin;
-	justify-items: center;
-	text-align: center;
-	word-wrap: normal;
-}
+/*** Animations ***/
 
-.icon-again {
-	background: lightgray;
-	width: 1.5em;
-	height: 1.5em;
-	mask: url(../media/again.svg) no-repeat;
-	mask-size: contain;
-}
-
-.icon-again:hover {
-  background: white;
-}
-
-.GameHeader > .play-again .icon-again {
-	width: 1.5em;
-	height: 1.5em;
-	transform-origin: center center;
-}
-
-/* Animations */
-
-.animate
-{
+.animate {
 	animation-fill-mode: both;
 	animation-timing-function: ease-out;
 }
 
-.animate.fast
-{
+.animate.fast {
 	animation-duration: 150ms;
 }
 
@@ -94,27 +62,4 @@
 {
 	0%   { grid-template-rows: 0fr 1fr 0fr 1fr; }
 	100% { grid-template-rows: 1fr 0fr 1fr 0fr; }
-}
-.blah {
-	height: 100%;
-}
-
-/* Rotaion animations */
-
-.rotateIn {
-	animation-name: rotateIn;
-}
-.rotateOut {
-	animation-name: rotateOut;
-}
-@keyframes rotateIn
-{
-	  0% { transform: rotate(0); }
-	100% { transform: rotate(-240deg); }
-}
-@keyframes rotateOut
-{
-	  /* 0% { transform: rotate(-240deg); } */
-	  0% { transform: rotate(-360deg); }
-	100% { transform: rotate(-360deg); }
 }
