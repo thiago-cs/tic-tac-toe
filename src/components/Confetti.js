@@ -3,6 +3,12 @@ import './Confetti.css';
 
 export default class ConfettiComponent extends Component
 {
+	static colorSchemes =
+	[
+		[ "85,71,156",  "174,61,99",  "219,56,83",  "255,100,70", "255,192,60" ],
+		[ "255,182,71", "206,255,71", "71,175,255", "255,71,240" ],
+	];
+
 	constructor(props)
 	{
 		super(props);
@@ -12,7 +18,7 @@ export default class ConfettiComponent extends Component
 		this._count = props.count || 250;
 		this._stopped = true;
 		this._stopRequested = false;
-		this._colors = [ "85,71,156", "174,61,99", "219,56,83", "255,100,70", "255,192,60" ];
+		this._colors = ConfettiComponent.colorSchemes[1];
 
 		// JS stuff.
 		this.start = this.start.bind(this);
@@ -44,7 +50,7 @@ export default class ConfettiComponent extends Component
 	{
 		this._canvas = this._canvasRef.current;
 		this._context = this._canvas.getContext("2d");
-		
+
     	window.addEventListener('resize', this.onWindowResized, false);
 		this.onWindowResized();
 		// setTimeout(this.onWindowResized, 0);
