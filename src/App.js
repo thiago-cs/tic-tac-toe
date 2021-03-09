@@ -2,7 +2,8 @@ import { Component } from 'react';
 import TicTacToeGame from './model/TicTacToeGame.js';
 import Game from './containers/Game.js';
 import Confetti from './components/Confetti.js';
-import Overlay from './containers/Overlay.js';
+import EndGameOverlay from './containers/EndGameOverlay.js';
+import SettingsOverlay from './containers/SettingsOverlay.js';
 import './App.css';
 
 export default class App extends Component
@@ -13,22 +14,42 @@ export default class App extends Component
 
 		//
 		this._game = new TicTacToeGame();
-		this._game.players[0].color = "YellowGreen";
-		this._game.players[1].color = "SlateBlue";
+		this._game.players[0].color = "#9ACD32";	// YellowGreen
+		this._game.players[1].color = "#6A5ACD";	// SlateBlue
 
 		this._confettiController = { };
 
-		this._isOverlayVisible = true;
+		this._isSettingsOverlayVisible = true;
 
 		// Binding our callbacks...
 		this.handleClick = this.handleClick.bind(this);
+		this.start = this.start.bind(this);
 		this.reset = this.reset.bind(this);
+	}
+
+	start({ players, indexFirstPlayer })
+	{
+		const game = this._game;
+
+		for (let i = 0; i < players.length; i++)
+		{
+			const newPlayer = players[i];
+			const realPlayer = game.players[i];
+
+			realPlayer.name = newPlayer.name;
+			realPlayer.symbol = newPlayer.symbol;
+			realPlayer.color = newPlayer.color;
+		}
+
+		game._currentPlayerIndex = indexFirstPlayer; // I know, I know.
+
+		this._isSettingsOverlayVisible = false;
+		this.reset();
 	}
 
 	reset()
 	{
 		this.stopConfetti();
-		this._isOverlayVisible = false;
 		this._game.reset();
 		this.setState({});
 	}
@@ -75,7 +96,8 @@ export default class App extends Component
 		<div className="App" >
 			<Game game={this._game} onClick={this.handleClick} />
 			<Confetti controller={this._confettiController} count={250} />
-			<Overlay game={this._game} onPlayAgain={this.reset} />
+			<EndGameOverlay game={this._game} onPlayAgain={this.reset} />
+			<SettingsOverlay game={this._game} isVisible={this._isSettingsOverlayVisible} onStartClick={this.start} />
 		</div>
 
 		);

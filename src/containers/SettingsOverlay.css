@@ -1,0 +1,40 @@
+.Settings {
+	font-size: 3vmin;
+	background-color: #0009;
+	display: grid;
+	align-content: center;
+}
+
+.Settings > .wrapper {
+	background-color: rgb(30, 30, 34);
+	padding: 3em;
+}
+
+.Settings fieldSet {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	row-gap: 3vmin;
+	column-gap: 8vmin;
+	justify-content: center;
+	align-content: center;
+	border-width: 0;
+}
+
+.Settings fieldSet .header {
+	color: white;
+	font-weight: bold;
+}
+
+.Settings fieldSet .header::selection {
+	background-color: transparent;
+}
+
+.Settings fieldSet input {
+	font-size: 70%;
+}
+
+.Settings fieldSet button {
+	grid-column-start: 3;
+	margin: 2em auto;
+	padding: 0.5em 2em;
+}
